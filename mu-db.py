@@ -1,10 +1,6 @@
 from flask import Flask, render_template, jsonify
-import models as db
-
-"""
-init app
-"""
-app = Flask(__name__)
+from db import models
+from api.api import app
 
 @app.route('/')
 @app.route('/index')
