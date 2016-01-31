@@ -1,4 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
+import models as db
+
+"""
+init app
+"""
 app = Flask(__name__)
 
 @app.route('/')
