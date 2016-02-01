@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="mu-db - Music Album Database" content="">
+        <meta name="Benjamin Pang" content="">
+        <title>mu.db</title>
+        
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,300' type='text/css' rel='stylesheet'/>
+
+        <!-- Bootstrap core CSS -->
+        <link href='{{ url_for('static', filename='styles/bootstrap.min.css') }}' rel='stylesheet'/>
+
+        <!-- mu-db CSS -->
+        <link href='{{ url_for('static', filename='styles/styles.css') }}' type='text/css' rel='stylesheet'/>
+
+    	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    	<!--[if lt IE 9]>
+     	 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     	 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   	    <![endif]-->
+    </head>
+    <body>
+        <header class="centered">
+            <h1 class="header-text">mu<span class="dark-text">.db</span></h1>
+            <form class="header-form" action="">
+                <input class="search-box" id="header-box" type='text' placeholder="Album, Artist, or Genre..."/>
+                <input class="search-button" id="header-submit"type='submit' value="search"/>
+            </form>
+        </header>
+        <main id="album-table">
+            <div class="album-cell">
+                <img class="album-art" src='{{ url_for('static', filename='img/electricgirl.jpg') }}'>
+                <h1 class="album-name-tag">Electric Girl</h1>
+                <h1 class="album-year-tag">2011</h1>    
+                <h3 class="album-artist-tag">she</h3>
+                <p class="album-genres-tag">hiphop, chill, electro</p> 
+            </div>
+        </main>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src='{{ url_for('static', filename='scripts/jquery-2.2.0.js') }}'></script>
+    <script src='{{ url_for('static', filename='scripts/bootstrap.min.js') }}'></script>
+    </body>
+    <script>
+        $(document).ready(function()
+        {
+            $('#header-submit').bind('click', function(event)
+            {
+                event.preventDefault();
+                
+                // Call "/search" endpoint when submit is clicked.
+                $.getJSON('/search',
+                {
+                    query: $('#header-box').val()
+                })
+                .success(function(json) 
+                { 
+                    console.log("JSON result:");
+                    console.log(json);
+                    
+                    // Clear previous results in album-table.
+                    $('#album-table').empty();
+                    
+                    $.each(json["albums"], function(index, album)
+                    {
+                        var genres = $.map(album.genres, function(genre, index)
+                                        {
+                                            return genre["genre_name"];
+                                        }).join(', ');
+                        
+                        var albumcell = $("<div class='album-cell'>" +
+                                                "<img class='album-art' src='{{ url_for('static', filename='" + album.album_art + "') }}'>" +
+                                                "<h1 class='album-name-tag'>" + album.album_name + "</h1>" +
+                                                "<h1 class='album-year-tag'>" + album.year + "</h1>" + 
+                                                "<h3 class='album-artist-tag'>" + album.artist_name + "</h3>" +
+                                                "<p class='album-genres-tag'>" + genres + "</p>" +
+                                                "</div>");
+                                                
+                        // Insert new album-cells.
+                        $('#album-table').append(albumcell);
+                    });
+                    
+                    /* Scroll to new data. */
+                    $('html, body').animate(
+                    {
+                        scrollTop: $('#album-table').offset().top
+                    }, 2000); 
+                });
+            });
+        });
+    </script>
+</html>

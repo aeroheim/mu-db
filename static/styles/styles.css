@@ -1,0 +1,110 @@
+body
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header-text
+{
+    color: #FF0066;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1000%;
+}
+
+.dark-text
+{
+    color: #000000;
+}
+ 
+.centered
+{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search-button
+{
+    width: 20%;
+    font-weight: 300;
+    font-size: 80%;
+}
+
+.search-box
+{
+    width: 78%;
+    font-weight: 300;
+    font-size: 80%;
+    text-indent: 2%;
+}
+
+#album-table
+{
+    /* Position below first fold. */
+    position: absolute;
+    top: 150%;
+    width: 100%;
+
+    /* Center the table. */
+    margin-left: 3%;
+    padding-right: 6%;
+    
+    /* Equal spacing for cells. */
+    text-align: justify;
+}
+
+.album-cell
+{
+    display: inline-block;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 70px;
+    
+    /* IE fix for equal spacing. */
+    *display: inline;
+    zoom: 1;
+}
+
+.album-name-tag
+{
+    font-size: 32px;
+    width: 313px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.album-artist-tag
+{
+    margin-top:-1%;
+    font-size: 16px;
+}
+
+.album-genres-tag
+{
+    font-size: 12px;
+}
+
+.album-year-tag
+{
+    display: inline;
+    float: right;
+    font-size: 16px;
+}
+
+.album-art
+{
+    width: 313px;
+    height: 313px;
+    box-shadow: 0px 0px 15px #888888;
+}
+
+#album-table:after
+{
+    /* Hack for equal spacing for cells. */
+    content: "";
+    width: 100%;
+    display: inline-block;
+}
+

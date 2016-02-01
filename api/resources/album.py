@@ -9,11 +9,7 @@ class AlbumsResource(Resource):
         """
         return JSON of all albums
         """ 
-        session = db.loadSession()
-        rowCount = session.query(db.Album).count()
-        session.close()        
-
-        return jsonify(albums = [getAlbumData(album_id) for album_id in range(rowCount)])
+        return getAllAlbums()
 
 class AlbumResource(Resource):
     def get(self, album_id):
@@ -21,6 +17,13 @@ class AlbumResource(Resource):
         return JSON of album with album_id
         """
         return jsonify(getAlbumData(album_id))
+
+def getAllAlbums():
+        session = db.loadSession()
+        rowCount = session.query(db.Album).count()
+        session.close()        
+
+        return jsonify(albums = [getAlbumData(album_id) for album_id in range(rowCount)])
 
 def getAlbumData(album_id):
     
