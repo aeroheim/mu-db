@@ -5,7 +5,7 @@ from api.resources.artist import *
 from api.resources.track import *
 from api.resources.genre import *
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
 api = Api(app)
 
 api.add_resource(AlbumsResource, '/album')
