@@ -15,7 +15,6 @@ def search():
     # empty query, return all albums
     if not query:
         result = getAllAlbums()
-        print(result)
         return result;
 
     return "TESTING"

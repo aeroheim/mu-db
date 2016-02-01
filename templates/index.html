@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>  
+        {{ JSGlue.include() }}
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -71,8 +72,11 @@
                                             return genre["genre_name"];
                                         }).join(', ');
                         
-                        var albumcell = $("<div class='album-cell'>" +
-                                                "<img class='album-art' src='{{ url_for('static', filename='" + album.album_art + "') }}'>" +
+                        console.log(album.album_art);
+                        var album_art = album.album_art;
+                        
+                        var albumcell = $("<div class='album-cell'>" +  
+                                                "<img class='album-art' src='" + Flask.url_for('static', {"filename" : album.album_art}) + "') }}'>" +
                                                 "<h1 class='album-name-tag'>" + album.album_name + "</h1>" +
                                                 "<h1 class='album-year-tag'>" + album.year + "</h1>" + 
                                                 "<h3 class='album-artist-tag'>" + album.artist_name + "</h3>" +
