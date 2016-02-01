@@ -1,3 +1,8 @@
+html
+{
+    overflow-y: scroll;
+}
+
 body
 {
     font-family: 'Open Sans', sans-serif;
@@ -39,11 +44,16 @@ body
     text-indent: 2%;
 }
 
+.hidden
+{
+    display: none;
+}
+
 #album-table
 {
     /* Position below first fold. */
     position: absolute;
-    top: 150%;
+    top: 125%;
     width: 100%;
 
     /* Center the table. */
@@ -68,7 +78,7 @@ body
 
 .album-name-tag
 {
-    font-size: 32px;
+    font-size: 24px;
     width: 313px;
     white-space: nowrap;
     overflow: hidden;

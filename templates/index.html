@@ -32,14 +32,7 @@
                 <input class="search-button" id="header-submit"type='submit' value="search"/>
             </form>
         </header>
-        <main id="album-table">
-            <div class="album-cell">
-                <img class="album-art" src='{{ url_for('static', filename='img/electricgirl.jpg') }}'>
-                <h1 class="album-name-tag">Electric Girl</h1>
-                <h1 class="album-year-tag">2011</h1>    
-                <h3 class="album-artist-tag">she</h3>
-                <p class="album-genres-tag">hiphop, chill, electro</p> 
-            </div>
+        <main id="album-table" class="hidden">
         </main>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src='{{ url_for('static', filename='scripts/jquery-2.2.0.js') }}'></script>
@@ -64,6 +57,7 @@
                     
                     // Clear previous results in album-table.
                     $('#album-table').empty();
+                    $('#album-table').removeClass('hidden');
                     
                     $.each(json["albums"], function(index, album)
                     {
@@ -71,9 +65,6 @@
                                         {
                                             return genre["genre_name"];
                                         }).join(', ');
-                        
-                        console.log(album.album_art);
-                        var album_art = album.album_art;
                         
                         var albumcell = $("<div class='album-cell'>" +  
                                                 "<img class='album-art' src='" + Flask.url_for('static', {"filename" : album.album_art}) + "') }}'>" +
@@ -87,11 +78,16 @@
                         $('#album-table').append(albumcell);
                     });
                     
-                    /* Scroll to new data. */
-                    $('html, body').animate(
+                    // Scroll to new data.
+                    if (json["albums"].length > 0)
                     {
-                        scrollTop: $('#album-table').offset().top
-                    }, 2000); 
+                        $('html, body').animate(
+                        {
+                            scrollTop: $('#album-table').offset().top
+                        }, 2000); 
+                    }
+                    else
+                        $('#album-table').addClass('hidden');
                 });
             });
         });
