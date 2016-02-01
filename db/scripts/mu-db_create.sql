@@ -123,9 +123,9 @@ INSERT INTO Artist
 
 -- Album & AlbumGenre rows
 INSERT INTO Album
-    VALUES(0, 0, 'Chill Tape Vol.1', NULL, 'Album', 2014, NULL, NULL),
-    (1, 0, 'Chill Tape Vol.2', NULL, 'Album', 2014, NULL, NULL),
-    (2, 0, 'nite loopz', NULL, 'Album', 2014, NULL, NULL);
+    VALUES(0, 0, 'Chill Tape Vol.1', 'img/chilltapevol1.jpg', 'Album', 2014, NULL, NULL),
+    (1, 0, 'Chill Tape Vol.2', 'img/chilltapevol2.jpg', 'Album', 2014, NULL, NULL),
+    (2, 0, 'nite loopz', 'img/niteloopz.jpg', 'Album', 2014, NULL, NULL);
 INSERT INTO AlbumGenres
     VALUES(0, 0),
     (0, 1),
@@ -135,10 +135,10 @@ INSERT INTO AlbumGenres
     (2, 1);
 
 INSERT INTO Album
-    VALUES(3, 1, 'Visions', NULL, 'Album', 2013, NULL, NULL),
-    (4, 1, 'Sleepwalker', NULL, 'Album', 2013, NULL, NULL),
-    (5, 1, 'Waking Nights', NULL, 'Album', 2014, NULL, NULL),
-    (6, 1, 'The Archive', NULL, 'Album', 2014, NULL, NULL);
+    VALUES(3, 1, 'Visions', 'img/visions.jpg', 'Album', 2013, NULL, NULL),
+    (4, 1, 'Sleepwalker', 'img/sleepwalker.jpg', 'Album', 2013, NULL, NULL),
+    (5, 1, 'Waking Nights', 'img/wakingnights.jpg', 'Album', 2014, NULL, NULL),
+    (6, 1, 'The Archive', 'img/thearchive.jpg', 'Album', 2014, NULL, NULL);
 INSERT INTO AlbumGenres
     VALUES(3, 0),
     (3, 1),
@@ -152,8 +152,8 @@ INSERT INTO AlbumGenres
     (6, 2);
 
 INSERT INTO Album
-    VALUES(7, 2, 'Immersion', NULL, 'LP', 2012, NULL, NULL),
-    (8, 2, 'Remember June', NULL, 'EP', 2013, NULL, NULL);
+    VALUES(7, 2, 'Immersion', 'img/immersion.jpg', 'LP', 2012, NULL, NULL),
+    (8, 2, 'Remember June', 'img/rememberjune.jpg', 'EP', 2013, NULL, NULL);
 INSERT INTO AlbumGenres
     VALUES(7, 0),
     (7, 1),
@@ -161,17 +161,17 @@ INSERT INTO AlbumGenres
     (8, 1);
 
 INSERT INTO Album
-    VALUES(9, 3, 'Voodooism', NULL, 'Album', 2014, NULL, NULL),
-    (10, 3, 'Voodooism the Sequel', NULL, 'Album', 2014, NULL, NULL);
+    VALUES(9, 3, 'Voodooism', 'img/voodooism.jpg', 'Album', 2014, NULL, NULL),
+    (10, 3, 'Voodooism the Sequel', 'img/voodooismthesequel.jpg', 'Album', 2014, NULL, NULL);
 INSERT INTO AlbumGenres
     VALUES(9, 3),
     (10, 3);
 
 INSERT INTO Album
-    VALUES(11, 4, 'Journeys', NULL, 'EP', 2011, NULL, NULL),
-    (12, 4, 'Electric Girl', NULL, 'Album', 2012, NULL, NULL),
-    (13, 4, 'Come See Me', NULL, 'EP', 2014, NULL, NULL),
-    (14, 4, 'Chiptek', NULL, 'Album', 2008, NULL, NULL);
+    VALUES(11, 4, 'Journeys', 'img/journeys.jpg', 'EP', 2011, NULL, NULL),
+    (12, 4, 'Electric Girl', 'img/electricgirl.jpg', 'Album', 2012, NULL, NULL),
+    (13, 4, 'Come See Me', 'img/comeseeme.jpg', 'EP', 2014, NULL, NULL),
+    (14, 4, 'Chiptek', 'img/chiptek.jpg', 'Album', 2008, NULL, NULL);
 INSERT INTO AlbumGenres
     VALUES(11, 2),
     (11, 3),
@@ -185,12 +185,12 @@ INSERT INTO AlbumGenres
     (14, 4);
 
 INSERT INTO Album
-    VALUES(15, 5, 'Creep', NULL, 'EP', 2008, NULL, NULL),
-    (16, 5, 'Abroad', NULL, 'EP', 2010, NULL, NULL),
-    (17, 5, 'En Route', NULL, 'EP', 2011, NULL, NULL),
-    (18, 5, 'The Nothing // MBox [Cover]', NULL, 'EP', 2011, NULL, NULL),
-    (19, 5, 'Palmer Station', NULL, 'Single', 2012, NULL, NULL),
-    (20, 5, 'SS Orion', NULL, 'EP', 2013, NULL, NULL);
+    VALUES(15, 5, 'Creep', 'img/creep.jpg', 'EP', 2008, NULL, NULL),
+    (16, 5, 'Abroad', 'img/abroad.jpg', 'EP', 2010, NULL, NULL),
+    (17, 5, 'En Route', 'img/enroute.jpg', 'EP', 2011, NULL, NULL),
+    (18, 5, 'The Nothing // MBox [Cover]', 'img/mbox.jpg', 'EP', 2011, NULL, NULL),
+    (19, 5, 'Palmer Station', 'img/palmerstation.jpg', 'Single', 2012, NULL, NULL),
+    (20, 5, 'SS Orion', 'img/ssorion.jpg', 'EP', 2013, NULL, NULL);
 INSERT INTO AlbumGenres
     VALUES(15, 0),
     (15, 1),
