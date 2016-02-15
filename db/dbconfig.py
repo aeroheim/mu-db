@@ -1,1 +1,1 @@
-SQLALCHEMY_DATABASE_URI = "postgresql://aeroheim:password@localhost/mu-db"
+SQLALCHEMY_DATABASE_URI = "postgresql://yourusername:yourpassword@localhost/mu-db"
