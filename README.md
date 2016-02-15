@@ -30,7 +30,7 @@ You may choose whatever you want for the **username** and **password**. Once fin
 ```python
 SQLALCHEMY_DATABASE_URI = "postgresql://yourusername:yourpassword@localhost/mu-db"
 ```
-Finally, run the SQL script to create the tables and populate them with data with the following command:
+Finally, run the [SQL script](db/scripts/mu-db_create.sql) to create the tables and populate them with data with the following command:
 ```sh
 psql "mu-db" -f db/scripts/mu-db_create.sql
 ````
